@@ -1,0 +1,71 @@
+BEGIN CoolerMathGames
+#this app has a collection of math games
+
+	HighScore = 0
+	current = 0
+	Print “Choose your options: “
+	Print “1 - Addition”
+	Print “2 - Subtraction”
+	Print “3 - Multiplication”
+	Print “4 - Division”
+	Print “5 - Tic Tac Toe”
+	Print “6 - Guess a number”
+
+    #user enters a number between 1-6 to start playing a game
+	Get choice
+
+    #put a game loop here to ensure they can keep putting
+    #in a choice until they leave it blank
+
+
+
+        IF choice == 1 THEN
+            current = Addition()
+        ELSEIF choice == 2 THEN
+            current = Subtraction()
+        ELSEIF choice == 3 THEN
+            current = Multiplication()
+        ELSEIF choice == 4 THEN
+            current = Division()
+        ELSEIF choice == 5 THEN
+            current = TicTacToe()
+        ELSEIF choice == 6 THEN
+            current = GuessANumber()
+        ENDIF
+
+        HighScore = HighScore + current
+
+
+
+
+END MathApp
+
+BEGIN Addition()
+
+    return score
+END Addition
+
+BEGIN Subtraction()
+
+    return score
+END Subtraction
+
+BEGIN Multiplication()
+
+    return score
+END Multiplication
+
+BEGIN Division()
+
+    return score
+END Division
+
+BEGIN TicTacToe()
+
+    return score
+END TicTacToe
+
+BEGIN GuessANumber()
+
+    return score
+END GuessANumber
