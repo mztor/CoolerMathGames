@@ -6,8 +6,26 @@ def guessingGame():
 
 def addie():
     score = 0
-    print("Riley")
+    nam = input("What's your name: ")
+    print(f"Hi {nam} Welcome to Addy")
+    input("Say YES to play: ")
+    end = False
+    while not end:
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        ans = num1 + num2
+        userAns = (input(f'What is {num1} plus {num2}? '))
+        if userAns != "":
+            userAns = int(userAns)
+            if userAns == ans:
+                print(f"CORRECT, LETS GO AGAIN {nam}")
+                score = score + 1
+            else:
+                print("WRONG, TRY AGAIN")
+        else:
+            end = True
     return score
+
 
 def subbie():
     score = 0
