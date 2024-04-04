@@ -1,7 +1,7 @@
 BEGIN CoolerMathGames
 #this app has a collection of math games
 
-	HighScore = 0
+	HighScore = 0 #keeps track of the scores from all the games
 	current = 0
 	Print “Choose your options: “
 	Print “1 - Addition”
@@ -13,12 +13,12 @@ BEGIN CoolerMathGames
 
     #user enters a number between 1-6 to start playing a game
 	Get choice
+	#choice = input("What's your choice? ")
 
     #put a game loop here to ensure they can keep putting
     #in a choice until they leave it blank
 
-
-
+    WHILE choice != ""
         IF choice == 1 THEN
             current = Addition()
         ELSEIF choice == 2 THEN
@@ -32,15 +32,40 @@ BEGIN CoolerMathGames
         ELSEIF choice == 6 THEN
             current = GuessANumber()
         ENDIF
-
+        #update high score
         HighScore = HighScore + current
-
+        Get choice
+    ENDWHILE
 
 
 
 END MathApp
 
 BEGIN Addition()
+    play = "Y"
+
+    WHILE play == "Y"
+        num1 = random number between 1 and 100
+        num2 = random number between 1 and 100
+
+        Print "What is " + num1 + " plus " + num2 + "?"
+        Get answer
+
+        WHILE answer != "Q"
+            IF answer == num1 + num2 THEN
+                Print "Correct!"
+                score += 1
+            ELSE
+                Print "Try again"
+                Print "What is " + num1 + " plus " + num2 + "?"
+                Get answer
+            ENDIF
+        ENDWHILE
+        Print "Play Again? Y/N"
+        Get play
+    ENDWHILE
+
+
 
     return score
 END Addition
